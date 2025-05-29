@@ -368,7 +368,7 @@ export default function App() {
 
             try {
               const response = await fetch(
-                "http://localhost:5000/api/contact",
+                `${import.meta.env.VITE_API_BASE_URL}/api/contact`,
                 {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
@@ -377,7 +377,7 @@ export default function App() {
               );
 
               if (response.ok) {
-                toast.success("Message sent succssfully");
+                toast.success("Message sent successfully");
                 e.target.reset();
               } else {
                 toast.error("Failed to send message");

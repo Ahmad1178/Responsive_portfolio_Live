@@ -55,28 +55,28 @@ app.post("/api/contact", async (req, res) => {
 });
 
 // Routes
-app.get("/api/reviews", async (req, res) => {
-  try {
-    const reviews = await Review.find().sort({ _id: -1 });
-    res.json(reviews);
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch reviews" });
-  }
-});
+// app.get("/api/reviews", async (req, res) => {
+//   try {
+//     const reviews = await Review.find().sort({ _id: -1 });
+//     res.json(reviews);
+//   } catch (err) {
+//     res.status(500).json({ error: "Failed to fetch reviews" });
+//   }
+// });
 
 // POST /api/reviews
-app.post("/api/reviews", async (req, res) => {
-  const { name, comment } = req.body;
-  try {
-    const review = new Review({ name, comment });
-    await review.save();
-    res.status(201).json(review);
-    console.log(object);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to save review" });
-    console.log(error);
-  }
-});
+// app.post("/api/reviews", async (req, res) => {
+//   const { name, comment } = req.body;
+//   try {
+//     const review = new Review({ name, comment });
+//     await review.save();
+//     res.status(201).json(review);
+//     console.log(object);
+//   } catch (error) {
+//     res.status(500).json({ error: "Failed to save review" });
+//     console.log(error);
+//   }
+// });
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
